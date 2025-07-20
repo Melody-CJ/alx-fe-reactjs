@@ -19,14 +19,13 @@ function App() {
   };
 
   return (
-    <>
       <UserContext.Provider value={userData}>
         <WelcomeMessage />
         <Header />
         <MainContent />
         <ProfilePage /> {/* ✅ Replace UserProfile with context-aware ProfilePage */}
         <Footer />
-      </UserContext.Provider>
+      
 
       <div>
         <a href="https://vite.dev" target="_blank">
@@ -48,8 +47,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
-    </>
-  );
+    </UserContext.Provider>
+  )
 }
 
 export default App;
