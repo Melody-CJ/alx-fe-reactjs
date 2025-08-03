@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { advancedSearchUsers } from '../services/githubService';
+import { fetchUserData, advancedSearchUsers } from '../services/githubService';
 
 const Search = () => {
   const [formData, setFormData] = useState({
@@ -21,9 +21,16 @@ const Search = () => {
     setLoading(true);
     setError('');
     try {
-      const data = await advancedSearchUsers(formData, nextPage);
-      setResults((prev) => (nextPage === 1 ? data.items : [...prev, ...data.items]));
-      setPage(nextPage);
+      if (formData.username && !formData.location && !formData.minRepos) {
+        // Use fetchUserData only when it's a basic username-only search
+        const data = await fetchUserData(formData.username);
+        setResults([data]);
+      } else {
+        // Use advanced search if other fields are filled
+        const data = await advancedSearchUsers(formData, nextPage);
+        setResults((prev) => (nextPage === 1 ? data.items : [...prev, ...data.items]));
+        setPage(nextPage);
+      }
     } catch (err) {
       setError('Looks like we cant find the user');
     } finally {
@@ -73,7 +80,7 @@ const Search = () => {
       <div className="grid gap-4">
         {results.map((user) => (
           <div
-            key={user.id}
+            key={user.id || user.login}
             className="p-4 border rounded shadow flex items-center justify-between"
           >
             <div className="flex items-center gap-4">
@@ -94,7 +101,7 @@ const Search = () => {
         ))}
       </div>
 
-      {results.length > 0 && (
+      {results.length > 0 && formData.location && (
         <button
           onClick={(e) => handleSubmit(e, page + 1)}
           className="mt-6 block mx-auto bg-gray-800 text-white px-4 py-2 rounded"
@@ -107,5 +114,3 @@ const Search = () => {
 };
 
 export default Search;
-
-
