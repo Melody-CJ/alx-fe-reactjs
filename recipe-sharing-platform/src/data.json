@@ -3,25 +3,81 @@
       "id": 1,
       "title": "Spaghetti Carbonara",
       "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-      "image": "https://via.placeholder.com/300x200"
+      "image": "https://via.placeholder.com/300x200",
+      "ingredients": [
+        "200g spaghetti",
+        "100g bacon",
+        "2 eggs",
+        "50g Parmesan cheese",
+        "Salt and black pepper to taste"
+      ],
+      "instructions": [
+        "Cook the spaghetti in salted boiling water until al dente.",
+        "Fry the bacon until crispy.",
+        "Whisk eggs and Parmesan together in a bowl.",
+        "Drain the pasta and mix with bacon.",
+        "Remove from heat, stir in egg mixture quickly, season with pepper, and serve."
+      ]
     },
     {
       "id": 2,
       "title": "Chicken Tikka Masala",
       "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-      "image": "https://via.placeholder.com/300x200"
+      "image": "https://via.placeholder.com/300x200",
+      "ingredients": [
+        "500g chicken breast",
+        "200ml tomato puree",
+        "100ml cream",
+        "2 tbsp butter",
+        "Spices (garam masala, cumin, coriander, paprika)"
+      ],
+      "instructions": [
+        "Marinate chicken with spices and yogurt, then grill until golden.",
+        "Heat butter in a pan and cook tomato puree with spices.",
+        "Add grilled chicken and simmer in the sauce.",
+        "Stir in cream and cook for 5 more minutes.",
+        "Serve hot with rice or naan bread."
+      ]
     },
     {
       "id": 3,
       "title": "Vegetable Stir Fry",
       "summary": "A quick, healthy, and colorful dish with fresh vegetables tossed in a savory sauce.",
-      "image": "https://via.placeholder.com/300x200"
+      "image": "https://via.placeholder.com/300x200",
+      "ingredients": [
+        "200g spaghetti",
+        "100g bacon",
+        "2 eggs",
+        "50g Parmesan cheese",
+        "Salt and black pepper to taste"
+      ],
+      "instructions": [
+        "Cook the spaghetti in salted boiling water until al dente.",
+        "Fry the bacon until crispy.",
+        "Whisk eggs and Parmesan together in a bowl.",
+        "Drain the pasta and mix with bacon.",
+        "Remove from heat, stir in egg mixture quickly, season with pepper, and serve."
+      ]
     },
     {
         "id": 4,
         "title": "Suya and Chips",
         "summary": "Perfectly grilled bee or chicken combine with french fries, creating and irresistable, finger licking dish.",
-        "image": "https://via.placeholder.com/300x200"
+        "image": "https://via.placeholder.com/300x200",
+        "ingredients": [
+          "500g chicken breast",
+          "200ml tomato puree",
+          "100ml cream",
+          "2 tbsp butter",
+          "Spices (garam masala, cumin, coriander, paprika)"
+        ],
+        "instructions": [
+          "Marinate chicken with spices and yogurt, then grill until golden.",
+          "Heat butter in a pan and cook tomato puree with spices.",
+          "Add grilled chicken and simmer in the sauce.",
+          "Stir in cream and cook for 5 more minutes.",
+          "Serve hot with rice or naan bread."
+        ]
     }
   ]
   
