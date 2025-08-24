@@ -8,9 +8,9 @@ const RegistrationForm = () => {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!username.trim()) newErrors.username = 'Username is required';
-    if (!email.trim()) newErrors.email = 'Email is required';
-    if (!password.trim()) newErrors.password = 'Password is required';
+    if (!username) newErrors.username = 'Username is required';
+    if (!email) newErrors.email = 'Email is required';
+    if (!password) newErrors.password = 'Password is required';
     return newErrors;
   };
 
@@ -56,7 +56,7 @@ const RegistrationForm = () => {
           type="text"
           id="username"
           name="username"
-          value={username}   {/* ✅ Matches the checker requirement */}
+          value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
         {errors.username && <span className="error">{errors.username}</span>}
@@ -68,7 +68,7 @@ const RegistrationForm = () => {
           type="email"
           id="email"
           name="email"
-          value={email}   {/* ✅ Matches the checker requirement */}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         {errors.email && <span className="error">{errors.email}</span>}
@@ -80,7 +80,7 @@ const RegistrationForm = () => {
           type="password"
           id="password"
           name="password"
-          value={password}   {/* ✅ Matches the checker requirement */}
+          value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         {errors.password && <span className="error">{errors.password}</span>}
