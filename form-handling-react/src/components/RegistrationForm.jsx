@@ -15,13 +15,21 @@ const RegistrationForm = () => {
       ...prev,
       [name]: value
     }));
+    
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
   };
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.username) newErrors.username = 'Username is required';
-    if (!formData.email) newErrors.email = 'Email is required';
-    if (!formData.password) newErrors.password = 'Password is required';
+    if (!formData.username.trim()) newErrors.username = 'Username is required';
+    if (!formData.email.trim()) newErrors.email = 'Email is required';
+    if (!formData.password.trim()) newErrors.password = 'Password is required';
     return newErrors;
   };
 
@@ -65,7 +73,7 @@ const RegistrationForm = () => {
           type="text"
           id="username"
           name="username"
-          value={formData.username}
+          value={formData.username}  // Correct controlled component usage
           onChange={handleChange}
         />
         {errors.username && <span className="error">{errors.username}</span>}
@@ -77,7 +85,7 @@ const RegistrationForm = () => {
           type="email"
           id="email"
           name="email"
-          value={formData.email}
+          value={formData.email}  // Correct controlled component usage
           onChange={handleChange}
         />
         {errors.email && <span className="error">{errors.email}</span>}
@@ -89,7 +97,7 @@ const RegistrationForm = () => {
           type="password"
           id="password"
           name="password"
-          value={formData.password}
+          value={formData.password}  // Correct controlled component usage
           onChange={handleChange}
         />
         {errors.password && <span className="error">{errors.password}</span>}
