@@ -1,4 +1,4 @@
-// src/components/FormikForm.jsx
+// src/components/FormikForm.js
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 

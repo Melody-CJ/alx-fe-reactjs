@@ -1,6 +1,6 @@
 import React from 'react'
 import RegistrationForm from './components/RegistrationForm'
-import FormikForm from './components/FormikForm'
+import FormikForm from './components/formikForm'
 import './index.css'
 
 const App = () => {
