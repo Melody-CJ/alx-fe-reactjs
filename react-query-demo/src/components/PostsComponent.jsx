@@ -2,33 +2,43 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 
 const fetchPosts = async () => {
-  const { data } = await axios.get('https://jsonplaceholder.typicode.com/posts');
-  return data;
+  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
 };
 
 const PostsComponent = () => {
-  const { data, isLoading, isError, error, refetch, isFetching } = useQuery({
+  const {
+    data: posts,
+    isLoading,
+    error,
+    refetch,
+    isFetching,
+  } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
-    staleTime: 5000, // Data stays fresh for 5 seconds
-    cacheTime: 1000 * 60 * 5, // Cache persists for 5 minutes
+    refetchOnWindowFocus: true, 
+    keepPreviousData: true,     
   });
 
   if (isLoading) return <p>Loading posts...</p>;
-  if (isError) return <p>Error: {error.message}</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Posts (React Query Demo)</h2>
-      <button onClick={() => refetch()} disabled={isFetching}>
+    <div>
+      <button
+        onClick={() => refetch()}
+        disabled={isFetching}
+        style={{ marginBottom: '10px' }}
+      >
         {isFetching ? 'Refreshing...' : 'Refetch Posts'}
       </button>
+
       <ul>
-        {data.slice(0, 10).map((post) => (
-          <li key={post.id}>
-            <strong>{post.title}</strong>
-            <p>{post.body}</p>
-          </li>
+        {posts.map(post => (
+          <li key={post.id}>{post.title}</li>
         ))}
       </ul>
     </div>

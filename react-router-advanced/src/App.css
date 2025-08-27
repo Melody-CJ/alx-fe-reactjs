@@ -1,0 +1,201 @@
+/* src/App.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+.navigation {
+  background: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #34495e;
+}
+
+.logout-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+  background: #c0392b;
+}
+
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Login Styles */
+.login-container {
+  max-width: 400px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.login-form div {
+  margin-bottom: 1rem;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.error {
+  color: #e74c3c;
+  padding: 0.5rem;
+  background: #fadbd8;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+/* Profile Styles */
+.profile-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.profile-nav {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  border-bottom: 2px solid #eee;
+}
+
+.profile-nav a {
+  padding: 1rem;
+  text-decoration: none;
+  color: #666;
+  border-bottom: 3px solid transparent;
+}
+
+.profile-nav a.active {
+  color: #3498db;
+  border-bottom-color: #3498db;
+}
+
+.profile-section {
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+/* Blog Styles */
+.blog-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.posts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.post-preview {
+  padding: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.post-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.read-more {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Dashboard Styles */
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  border-left: 4px solid #3498db;
+}
+
+.not-found {
+  text-align: center;
+  padding: 4rem;
+}
+
+.not-found h2 {
+  color: #e74c3c;
+  margin-bottom: 1rem;
+}
