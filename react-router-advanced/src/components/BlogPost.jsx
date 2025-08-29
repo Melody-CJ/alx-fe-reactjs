@@ -1,8 +1,9 @@
-
+//src/components/Blogpost.jsx
 import { useParams, Navigate, Link } from 'react-router-dom';
 
 const BlogPost = () => {
-  const { postId } = useParams();
+  const { id } = useParams();
+
   
   const posts = {
     1: { 
@@ -19,7 +20,7 @@ const BlogPost = () => {
     },
   };
 
-  const post = posts[postId];
+  const post = posts[id];
 
   if (!post) {
     return (
